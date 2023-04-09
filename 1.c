@@ -13,7 +13,7 @@ int main () {
     fscanf(input, "%d %d", &a, &b);
     fclose(input);
     //a = a - b;
-    asm volatile("sub %w[A], %w[A], %w[B]\n\t"
+    asm volatile("sub %[A], %[A], %[B]\n\t"
                  :[A] "+r" (a)
                  :[B] "r" (b)
                  );
